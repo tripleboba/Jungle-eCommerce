@@ -1,2 +1,17 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<%# <h1>Admin::Dashboard#show</h1>
+<p>Find me in app/views/admin/dashboard/show.html.erb</p> %>
+
+<section>
+   <p>Have <%= @product_num %> products in the database</p>
+   <%= link_to "Review all products", admin_products_path %>
+ </section>
+
+ <section>
+   <p>Have <%= @categories.length %> categories in the database</p>
+   <ul>
+   <% @categories.each do |cate| %>
+     <li> <%= link_to "#{cate.name}", category_path(cate.id) %>
+     </li>
+   <% end %>
+   </ul>
+ </section %>
