@@ -6,7 +6,19 @@
     <p>Have <%= @product_num %> products in the database</p>
   </div>
   <div class="panel-body">
-    <%= link_to "Review all products", admin_products_path %>
+  <div id="product-summary">
+    <div>
+      <p id="sold-out-title">Sold out product: </p>
+      <ul>
+        <% Product.where(quantity: 0).each do |sold_out_product| %>
+        <li>
+          <%= sold_out_product.name %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+    <p><%= link_to "Review all products", admin_products_path %></p>
+    </div>
   </div>
 </div>
 
@@ -15,10 +27,9 @@
     <p>Have <%= @categories.length %> categories in the database</p>
   </div>
   <div class="panel-body">
-    <ul>
-      <% @categories.each do |cate| %>
-        <li> <%= link_to "#{cate.name}", category_path(cate.id) %>
-        </li>
+    <ul id="category">
+      <% @categories.each do |category| %>
+        <li> <%= link_to category.name, category %> </li>
       <% end %>
     </ul>
   </div>
