@@ -6,6 +6,7 @@
 // App
 @import "products";
 @import "admin/dashboard";
+@import "user";
 
 // Global
 body {
@@ -15,4 +16,8 @@ body {
 // Bootstrap adjustments
 form.button_to {
   display: inline;
+}
+
+#display-username {
+  padding: 1em;
 }
