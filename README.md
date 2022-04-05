@@ -2,7 +2,7 @@
 
 A mini e-commerce application built with Rails 4.2. Handle user/admin authentication, vendor stocks databases, and fake payment API.
 
-![main](display/main.jpeg)
+![main](display/mainPage.png)
 
 ## Additional Steps for Apple M1 Machines
 
